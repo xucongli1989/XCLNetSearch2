@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9AA3EC86-711E-4921-9778-5164794F8A73}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XCLNetSearch</RootNamespace>
+    <AssemblyName>XCLNetSearch</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Nonshipping>true</Nonshipping>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\XCLNetSearch.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EcmaScript.NET, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Doc\DLL\EcmaScript.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Doc\DLL\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="Yahoo.Yui.Compressor, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Doc\DLL\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonHelper.cs" />
+    <Compile Include="EnumObj.cs" />
+    <Compile Include="EnumTypes.cs" />
+    <Compile Include="Model\DataTypeInfoModel.cs" />
+    <Compile Include="Model\SymbolModel.cs" />
+    <Compile Include="Model\QueryFieldModel.cs" />
+    <Compile Include="Model\QueryItemModel.cs" />
+    <Compile Include="Model\SearchModel.cs" />
+    <Compile Include="Search.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates\TemplateModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Images\add_search.gif" />
+    <EmbeddedResource Include="Resources\Images\del_search.gif" />
+    <EmbeddedResource Include="Resources\Images\down.gif" />
+    <EmbeddedResource Include="Resources\Images\search.gif" />
+    <EmbeddedResource Include="Resources\Images\search2.gif" />
+    <EmbeddedResource Include="Resources\Images\up.gif" />
+    <EmbeddedResource Include="Resources\Config\SymbolConfig.xml" />
+    <EmbeddedResource Include="Templates\T1.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Doc\DLL\EcmaScript.NET.dll" />
+    <Content Include="Doc\DLL\Iesi.Collections.dll" />
+    <Content Include="Doc\DLL\Yahoo.Yui.Compressor.dll" />
+    <Content Include="Doc\XCLNetSearch手册\1.jpg" />
+    <Content Include="Doc\XCLNetSearch手册\2.jpg" />
+    <Content Include="Doc\XCLNetSearch手册\3.jpg" />
+    <Content Include="Doc\XCLNetSearch手册\4.jpg" />
+    <Content Include="Doc\XCLNetSearch手册\5.jpg" />
+    <Content Include="Doc\XCLNetSearch手册\6.jpg" />
+    <Content Include="Doc\XCLNetSearch手册\template2\btn_next_g.gif" />
+    <Content Include="Doc\XCLNetSearch手册\template2\btn_next_n.gif" />
+    <Content Include="Doc\XCLNetSearch手册\template2\btn_prev_g.gif" />
+    <Content Include="Doc\XCLNetSearch手册\template2\btn_prev_n.gif" />
+    <Content Include="Doc\XCLNetSearch手册\template2\fixedtop.htm" />
+    <Content Include="Doc\XCLNetSearch手册\template2\winchm_template_style.css" />
+    <Content Include="Doc\XCLNetSearch手册\template\btn_next_n.gif" />
+    <Content Include="Doc\XCLNetSearch手册\template\btn_prev_n.gif" />
+    <Content Include="Doc\XCLNetSearch手册\template\hgrad.gif" />
+    <Content Include="Doc\XCLNetSearch手册\template\logo.gif" />
+    <Content Include="Doc\XCLNetSearch手册\template\msn.htm" />
+    <Content Include="Doc\XCLNetSearch手册\引用.htm" />
+    <Content Include="Doc\XCLNetSearch手册\截图.htm" />
+    <Content Include="Doc\XCLNetSearch手册\示例代码.htm" />
+    <Content Include="Doc\XCLNetSearch手册\说明.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Doc\XCLNetSearch手册\XCLNetSearch手册.wcp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

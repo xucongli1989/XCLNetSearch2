@@ -1,0 +1,11 @@
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2Web\bin\XCLNetSearch2Web.dll
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2Web\bin\XCLNetSearch2Web.pdb
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2Web\bin\XCLNetSearch.dll
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2Web\bin\Yahoo.Yui.Compressor.dll
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2Web\bin\EcmaScript.NET.dll
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2Web\bin\Iesi.Collections.dll
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2Web\bin\XCLNetSearch.pdb
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2Web\bin\XCLNetSearch.xml
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2Web\obj\Release\XCLNetSearch2Web.csprojResolveAssemblyReference.cache
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2Web\obj\Release\XCLNetSearch2Web.dll
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2Web\obj\Release\XCLNetSearch2Web.pdb

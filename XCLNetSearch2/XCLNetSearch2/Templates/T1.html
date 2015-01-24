@@ -1,0 +1,412 @@
+﻿<table style="width:100%; border:0px;"  cellspacing="0" cellpadding="0" id="{XCL:容器ID}" class="{XCL:容器ID}">
+            <tr>
+                <td align="center">
+                    <a href="javascript:void(0);" id="{XCL:展开搜索框的图片按钮ID}"><img src="{XCL:展开搜索框的图片URL}" border="0" alt="展开搜索"/></a>
+                    <input type="hidden" IsSubmit="1" name="{XCL:存放最终解析结果的控件Name}" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <div  id="{XCL:查询项所在容器ID}">
+                        <table border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                           <tr class="{XCL:动态增删行的行Class}">
+                                                <td align="center" style="padding-top:3px;padding-bottom:3px">
+                                                        <select name="{XCL:左括号选择框的Name}">
+                                                            <option value=""></option>
+                                                            {XCL:左括号选择框的Options}
+                                                        </select>
+                                                        —
+                                                        <select name="{XCL:字段选择框的Name}">
+                                                            <option value="">==重置此条件==</option>
+                                                            {XCL:字段选择框的Options}
+                                                        </select>
+                                                        —
+                                                        <select name="{XCL:符号选择框的Name}" style="width:100px;">
+                                                            {XCL:符号选择框的Options}
+                                                        </select>
+                                                        —
+                                                        <span class="{XCL:输入区域控件的父标签Class}"><input type="text" name="{XCL:输入区域控件的Name}" style="width:120px;"/></span>
+                                                        —
+                                                        <select name="{XCL:右括号选择框的Name}">
+                                                            <option value=""></option>
+                                                            {XCL:右括号选择框的Options}
+                                                        </select>
+                                                        —
+                                                        <select name="{XCL:逻辑选择框的Name}">
+                                                            {XCL:逻辑选择框的Options}
+                                                        </select>
+                                                </td>
+                                                <td align="left">
+                                                    <a href="javascript:void(0);" class="{XCL:增加搜索条件按钮的Class}" title="增加搜索条件"><img src="{XCL:增加搜索条件按钮的图片URL}" border="0" /></a>
+                                                    <a href="javascript:void(0);" class="{XCL:删除搜索条件按钮的Class}"  title="删除搜索条件"><img src="{XCL:删除搜索条件按钮的图片URL}" border="0" /></a>
+                                                </td>
+                                            </tr>
+                                           <tr class="{XCL:动态增删行的模板行Class}">
+                                                <td align="center" style="padding-top:3px;padding-bottom:3px">
+                                                        <select name="{XCL:左括号选择框的Name}">
+                                                            <option value=""></option>
+                                                            {XCL:左括号选择框的Options}
+                                                        </select>
+                                                        —
+                                                        <select name="{XCL:字段选择框的Name}">
+                                                            <option value="">==重置此条件==</option>
+                                                            {XCL:字段选择框的Options}
+                                                        </select>
+                                                        —
+                                                        <select name="{XCL:符号选择框的Name}" style="width:100px;">
+                                                            {XCL:符号选择框的Options}
+                                                        </select>
+                                                        —
+                                                        <span class="{XCL:输入区域控件的父标签Class}"><input type="text" name="{XCL:输入区域控件的Name}" style="width:120px;"/></span>
+                                                        —
+                                                        <select name="{XCL:右括号选择框的Name}">
+                                                            <option value=""></option>
+                                                            {XCL:右括号选择框的Options}
+                                                        </select>
+                                                        —
+                                                        <select name="{XCL:逻辑选择框的Name}">
+                                                            {XCL:逻辑选择框的Options}
+                                                        </select>
+                                                </td>
+                                                <td align="left">
+                                                    <a href="javascript:void(0);" class="{XCL:增加搜索条件按钮的Class}" title="增加搜索条件"><img src="{XCL:增加搜索条件按钮的图片URL}" border="0" /></a>
+                                                    <a href="javascript:void(0);" class="{XCL:删除搜索条件按钮的Class}"  title="删除搜索条件"><img src="{XCL:删除搜索条件按钮的图片URL}" border="0" /></a>
+                                                </td>
+                                            </tr>
+                                    </table>
+                                </td>
+                                <td align="left" style="padding-left:10px;">
+                                    <a href="###" id="{XCL:查询提交按钮的ID}"><img src="{XCL:查询提交按钮的图片URL}" border="0" /></a>
+                                        {XCL:提示信息}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+</table>
+<script type="text/javascript">
+    (function ($) {
+        var defaults = {
+            container: ".dynamicCon", /*最外层的容器class*/
+            temp: ".temp", /*模板层class*/
+            items: ".items", /*具体行class*/
+            minCount: 1, /*具体行的最小数量*/ 
+            maxCount: 50, /*具体行的最大数量*/
+            addBtn: ".addBtn", /*添加按钮class*/
+            delBtn: ".delBtn"/*删除按钮class*/
+        }
+        $.extend({
+            {XCL:动态内容区JS插件名称}: function (options) {
+                options = $.extend(defaults, options);
+                var $conAll = $(options.container);
+                $conAll.each(function (i) {
+                    var $con = $(this);
+                    var $temp = $con.find(options.temp); /*模板行*/
+                    $temp.attr({ "class": options.items.substring(1, options.items.length) }).wrap("<div style='display:none'></div>");
+                    var tempHtml = escape($temp.parent().html());
+                    $temp.parent().remove();
+                    /*添加行事件*/
+                    $con.find(options.addBtn).live("click", function () {
+                        $con = $($conAll[i]);
+                        if ($con.find(options.items).length == options.maxCount) {
+                            alert("最多只能添加" + options.maxCount + "行！"); return false;
+                        }
+                        $(this).closest(options.items).after(unescape(tempHtml));
+                    });
+                    /*删除行事件*/
+                    $con.find(options.delBtn).live("click", function () {
+                        $con = $($conAll[i]);
+                        if ($con.find(options.items).length == options.minCount) {
+                            alert("最少要有" + options.minCount + "行！"); return false;
+                        }
+                        $(this).closest(options.items).remove();
+                    });
+                });
+
+
+            }
+            });
+    })(jQuery);
+
+    $(function () {
+
+        /*
+            说明：
+            1：URL参数值格式
+                where= 左括号ID|escape(字段名)|比较符ID|escape(输入值)|右括号ID|逻辑符ID,左括号ID|escape(字段名)|比较符ID|escape(输入值)|右括号ID|逻辑符ID
+                最终参数值为where=where
+        */
+
+
+
+        /*变量*/
+        var inputControlTypeJson={XCL:输入区域控件类型Json字符串};
+
+        var $con= $("#{XCL:容器ID}");
+        var $tempLineTrObj=$con.find(".{XCL:动态增删行的模板行Class}");
+        var $divSearch=$con.find("#{XCL:查询项所在容器ID}");
+        var $openImgA=$con.find("#{XCL:展开搜索框的图片按钮ID}");
+        var $openImg = $openImgA.find("img");
+        var $btnSearch = $con.find("#{XCL:查询提交按钮的ID}");
+        var $btnSearchImg = $btnSearch.find("img");
+        var $fm = $con.closest("form:eq(0)");
+
+        /*表单提交按钮滑过事件*/
+        $btnSearch.hover(function(){
+            $btnSearchImg.attr({"src":"{XCL:查询提交按钮鼠标划过的图片URL}"});
+        },function(){
+            $btnSearchImg.attr({"src":"{XCL:查询提交按钮的图片URL}"});
+        });
+
+        /*搜索框的显示与隐藏*/
+        var OpenImgAChange=function(){
+            if ($divSearch.css("display") == "none") {
+                $openImg.attr({ "src": "{XCL:展开搜索框的图片URL}" });
+                $divSearch.show("fast");
+            } else {
+                $openImg.attr({ "src": "{XCL:隐藏搜索框的图片URL}" });
+                $divSearch.hide("fast");
+            }
+        }
+
+        /*动态增删行初始化*/
+        $.{XCL:动态内容区JS插件名称}({
+            container: ".{XCL:容器ID}",
+            temp: ".{XCL:动态增删行的模板行Class}",
+            items: ".{XCL:动态增删行的行Class}",
+            minCount: 1,
+            maxCount: { XCL: 动态增删行的行的最大行数 },
+            addBtn: ".{XCL:增加搜索条件按钮的Class}",
+            delBtn: ".{XCL:删除搜索条件按钮的Class}"
+        });
+        $openImgA.live("click", function () {
+            OpenImgAChange();
+        });
+
+        /*查询项Model*/
+        function QueryItemModel(){
+            this.LeftBracket="";
+            this.Field="";
+            this.Compare="";
+            this.FieldValue="";
+            this.RightBracket="";
+            this.Logic="";
+        }
+        
+        /*字段选择事件*/
+        var fieldSelectChange=function(obj){
+            var $tempTr=$(obj).closest("tr.{XCL:动态增删行的行Class}");
+            var $leftBracketSelect,$fieldSelect,$symbolSelect,$inputAreaParent,getInputArea,$rightBracketSelect,$logicSelect;
+
+            $leftBracketSelect=$tempTr.find("[name='{XCL:左括号选择框的Name}']");
+            $fieldSelect=$tempTr.find("[name='{XCL:字段选择框的Name}']");
+            $symbolSelect=$tempTr.find("[name='{XCL:符号选择框的Name}']");
+            $inputAreaParent=$tempTr.find(".{XCL:输入区域控件的父标签Class}");
+            getInputArea=function(){ return $inputAreaParent.find("[name='{XCL:输入区域控件的Name}']");}//会变动，所以用function
+            $rightBracketSelect=$tempTr.find("[name='{XCL:右括号选择框的Name}']");
+            $logicSelect=$tempTr.find("[name='{XCL:逻辑选择框的Name}']");
+
+            
+
+            $symbolSelect.html('{XCL:符号选择框的Options}');
+
+            var $selectOps=$fieldSelect.find("option:selected");
+            var customInputControlAttributes=unescape($selectOps.attr("CustomInputControlAttributes"));
+            var inputControlInitValue=unescape($selectOps.attr("InputControlInitValue"));
+            var inputControlType=$selectOps.attr("InputControlType");
+            var allowSymbols=$selectOps.attr("AllowSymbols");
+            var allowSymbolsArray=(allowSymbols||"").split(',');
+            var $oldInputArea=getInputArea();
+
+            //动态生成输入区
+            $inputAreaParent.html("");
+            var sHtml="";
+            switch(inputControlType){
+                case inputControlTypeJson.Select:
+                    sHtml="<select name='"+$oldInputArea.attr("name")+"' style='"+$oldInputArea.attr("style")+" ' "+customInputControlAttributes+"  > "+inputControlInitValue+"</select>";
+                    break;
+                case inputControlTypeJson.TextBox:
+                    sHtml="<input type='text' name='"+$oldInputArea.attr("name")+"' style='"+$oldInputArea.attr("style")+"' value='"+inputControlInitValue+"'   "+customInputControlAttributes+"/>";
+                    break;
+                default:
+                    sHtml="<input type='text' name='"+$oldInputArea.attr("name")+"' style='"+$oldInputArea.attr("style")+"' value=''/>";
+                    break;
+            }
+            $inputAreaParent.html(sHtml);
+
+            //筛选比较符
+            if(allowSymbols&&allowSymbolsArray.length>0){
+                $symbolSelect.find("option").each(function(){
+                    var v=$(this).val();
+                    if($.inArray(v,allowSymbolsArray)<0){
+                        $(this).remove();
+                    }
+                });
+            }
+
+            //时间日期选择
+            var symbolDataType=$selectOps.attr("SymbolDataType");
+            var fieldDateFormat=$selectOps.attr("FieldDateFormat");
+            if(null!=fieldDateFormat&&fieldDateFormat!=""){
+                getInputArea().bind("click",function(){
+                    WdatePicker({dateFmt:fieldDateFormat});
+                });
+            }
+        }
+
+        /*比较符号选择事件*/
+        var symbolSelectChange=function(obj){
+            var $tempTr=$(obj).closest("tr.{XCL:动态增删行的行Class}");
+            var $fieldSelect=$tempTr.find("[name='{XCL:字段选择框的Name}']");
+            var $selectOps=$fieldSelect.find("option:selected");
+            var inputControlInitValue=unescape($selectOps.attr("InputControlInitValue"));
+            var inputControlType=$selectOps.attr("InputControlType");
+            var $inputArea=$tempTr.find("[name='{XCL:输入区域控件的Name}']");
+            var isNeedValue=$(obj).find("option:selected").attr("IsNeedValue");
+            //处理为空和不为空的情况
+            if(isNeedValue=="false"){
+                switch(inputControlType){
+                    case inputControlTypeJson.TextBox:
+                        $inputArea.val(".");
+                        break;
+                    case inputControlTypeJson.Select:
+                        $inputArea.html("<option value='.'>.</option>");
+                        break;
+                }
+                $inputArea.attr({"disabled":true});
+            }else{
+                if($inputArea.attr("disabled")){
+                    switch(inputControlType){
+                        case inputControlTypeJson.TextBox:
+                            $inputArea.val(inputControlInitValue);
+                            break;
+                        case inputControlTypeJson.Select:
+                            $inputArea.html(inputControlInitValue);
+                            break;
+                    }
+                }
+                $inputArea.attr({"disabled":false});
+            }
+        }
+
+        /*字段选择框事件*/
+        $con.find("[name='{XCL:字段选择框的Name}']").live("change",function(){
+            fieldSelectChange(this);
+
+            var $tempTr=$(this).closest("tr.{XCL:动态增删行的行Class}");
+            var $symbolSelect=$tempTr.find("[name='{XCL:符号选择框的Name}']");
+            symbolSelectChange($symbolSelect[0]);
+        });
+
+        /*符号选择框事件*/
+        $con.find("[name='{XCL:符号选择框的Name}']").live("change",function(){
+            symbolSelectChange(this);
+        });
+
+        /**
+        根据查询项的json数组，返回URL参数值的字符串形式
+        @queryArray json数组
+        */
+        function GetUrlValueByQueryModelList(queryArray){
+            //生成最终的URL查询字符串
+            var queryValue="";
+            if(queryArray.length>0){
+                var queryValueArray=[];
+                for(var i=0;i<queryArray.length;i++){
+                    var jsonTempStr=[];
+                    for(var m in queryArray[i]){
+                        if(m.toString()=="Field"||m.toString()=="FieldValue"){
+                            jsonTempStr.push(escape(queryArray[i][m]));//只对字段和输入值进行编码
+                        }else{
+                            jsonTempStr.push(queryArray[i][m]);
+                        }
+                    }
+                    queryValueArray.push(jsonTempStr.join('|'));
+                }
+                queryValue=queryValueArray.join(',');
+            }
+            return queryValue;
+        }
+
+        /*初始化查询控件，根据传过来的查询条件来生成查询控件的界面处理*/
+        (function(queryArray){
+            var qs=GetUrlValueByQueryModelList(queryArray);
+            $con.find("[name='{XCL:存放最终解析结果的控件Name}']").val(qs);
+            if(null!=queryArray&&queryArray.length>0){
+
+                if(queryArray.length>1){
+                    for(var i=1;i<queryArray.length;i++){
+                            $con.find(".{XCL:增加搜索条件按钮的Class}").last().click();
+                    }
+                }
+
+
+                for(var i=0;i<queryArray.length;i++){
+                       
+                        var $t=$($con.find("tr.{XCL:动态增删行的行Class}")[i]);
+                        var query=queryArray[i];
+                        $t.find("[name='{XCL:左括号选择框的Name}']").val(query.LeftBracket);
+                        /**事件触发开始**/
+                        var $fieldObj=$t.find("[name='{XCL:字段选择框的Name}']");
+                        $fieldObj.val(unescape(query.Field));
+                        fieldSelectChange($fieldObj[0]);
+                        var $symObj=$t.find("[name='{XCL:符号选择框的Name}']");
+                        $symObj.val(query.Compare);
+                        symbolSelectChange($symObj[0]);
+                        /**事件触发结束**/
+                        $t.find("[name='{XCL:输入区域控件的Name}']").val(unescape(query.FieldValue));
+                        $t.find("[name='{XCL:右括号选择框的Name}']").val(query.RightBracket);
+                        $t.find("[name='{XCL:逻辑选择框的Name}']").val(query.Logic);
+
+                }
+            }
+        }({XCL:查询处理后的URL值的Json}))
+
+        /*submit事件*/
+        $fm.submit(function(){
+            $fm.find("input,select,textarea").not("[IsSubmit=1]").attr({ "disabled": true });
+            var queryArray=[];
+            var $tempTr=$con.find("tr.{XCL:动态增删行的行Class}");
+
+            //遍历每个查询行，拼接URL字符串
+            $tempTr.each(function(){
+                //注意该对象属性的顺序，一定要与QueryItemModel保持一致
+                var query=new QueryItemModel();
+                query.LeftBracket=$(this).find("[name='{XCL:左括号选择框的Name}']").val();
+                query.Field=$(this).find("[name='{XCL:字段选择框的Name}']").val();
+                query.Compare=$(this).find("[name='{XCL:符号选择框的Name}']").val();
+                query.FieldValue=$(this).find("[name='{XCL:输入区域控件的Name}']").val();
+                query.RightBracket=$(this).find("[name='{XCL:右括号选择框的Name}']").val();
+                query.Logic=$(this).find("[name='{XCL:逻辑选择框的Name}']").val();
+                if(query.Field==""||query.FieldValue==""){
+                    return true;
+                }
+                queryArray.push(query);
+            });
+
+            //生成最终的URL查询字符串
+            $con.find("[name='{XCL:存放最终解析结果的控件Name}']").val(GetUrlValueByQueryModelList(queryArray));
+
+        });
+
+        /*表单提交*/
+        $btnSearch.live("click", function () {
+            $fm.submit();
+            return false;
+        });
+
+        /*回车提交查询*/
+        $con.find("[name='{XCL:输入区域控件的Name}']").live("keypress",function(event){
+            if(event.keyCode=="13")
+            {
+                $btnSearch.click();
+                return false;
+            }
+        });
+
+    });
+</script>

@@ -1,0 +1,9 @@
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2\bin\Release\XCLNetSearch.xml
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2\bin\Release\XCLNetSearch.dll
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2\bin\Release\XCLNetSearch.pdb
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2\bin\Release\EcmaScript.NET.dll
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2\bin\Release\Iesi.Collections.dll
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2\bin\Release\Yahoo.Yui.Compressor.dll
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2\obj\Release\XCLNetSearch2.csprojResolveAssemblyReference.cache
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2\obj\Release\XCLNetSearch.dll
+D:\Work\TFS\TFSData\XCLWork\MyTask\自定义服务器控件\MyServerControl\MyServerControl\XCLNetSearch2\obj\Release\XCLNetSearch.pdb

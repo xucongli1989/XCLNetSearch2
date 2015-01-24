@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+    <SQLType Name="MSSQL">
+        <!--符号-->
+        <SymbolInfo>
+            <Symbol ID="1" SymbolType="左括号" DisplayName="左括号" FlagName="LeftBracket" Name="(" Sort="0"/>
+
+            <Symbol  ID="2" SymbolType="右括号" DisplayName="右括号" FlagName="RightBracket"  Name=")" Sort="0"/>
+
+            <Symbol ID="3"  SymbolType="比较符" DisplayName="等于" FlagName="Equal"  Name="=" Sort="0" IsNeedValue="true" ValueFormat="{0}"/>
+            <Symbol ID="4"  SymbolType="比较符" DisplayName="大于"  FlagName="Large"  Name="&gt;" Sort="1" IsNeedValue="true" ValueFormat="{0}"/>
+            <Symbol ID="5"  SymbolType="比较符" DisplayName="小于" FlagName="Less"  Name="&lt;" Sort="2" IsNeedValue="true" ValueFormat="{0}"/>
+            <Symbol  ID="6" SymbolType="比较符" DisplayName="大于等于"  FlagName="LargeEqual" Name="&gt;=" Sort="3" IsNeedValue="true" ValueFormat="{0}"/>
+            <Symbol  ID="7" SymbolType="比较符" DisplayName="小于等于" FlagName="LessEqual"  Name="&lt;=" Sort="4" IsNeedValue="true" ValueFormat="{0}"/>
+            <Symbol  ID="8" SymbolType="比较符" DisplayName="不等于" FlagName="NotEqual"  Name="&lt;&gt;" Sort="5" IsNeedValue="true" ValueFormat="{0}"/>
+            <Symbol ID="9"  SymbolType="比较符" DisplayName="包含" FlagName="Like"  Name="like" Sort="6" IsNeedValue="true" ValueFormat="%{0}%"/>
+            <Symbol  ID="10" SymbolType="比较符" DisplayName="不包含" FlagName="NotLike"  Name="not like" Sort="7" IsNeedValue="true" ValueFormat="%{0}%"/>
+            <Symbol ID="11"  SymbolType="比较符" DisplayName="以某某开始" FlagName="BeginWith"  Name="like"  Sort="8" IsNeedValue="true" ValueFormat="{0}%"/>
+            <Symbol ID="12"  SymbolType="比较符" DisplayName="不以某某开始" FlagName="NotBeginWith"  Name="not like"  Sort="8" IsNeedValue="true" ValueFormat="{0}%"/>
+            <Symbol  ID="13" SymbolType="比较符" DisplayName="以某某结束" FlagName="EndWith"  Name="like" Sort="9" IsNeedValue="true" ValueFormat="%{0}"/>
+            <Symbol  ID="14" SymbolType="比较符" DisplayName="不以某某结束" FlagName="NotEndWith"  Name="not like" Sort="9" IsNeedValue="true" ValueFormat="%{0}"/>
+            <!--这里是算该字段的长度=0-->
+            <Symbol ID="15"  SymbolType="比较符" DisplayName="为空"  FlagName="IsNull" Name="=0" Sort="10" IsNeedValue="false" ValueFormat="{0}"/>
+            <!--这里是算该字段的长度>0-->
+            <Symbol ID="16"  SymbolType="比较符" DisplayName="不为空"  FlagName="IsNotNull"  Name=">0" Sort="11" IsNeedValue="false" ValueFormat="{0}"/>
+
+            <Symbol  ID="17" SymbolType="逻辑符" DisplayName="并且" FlagName="And"  Name="and" Sort="0"/>
+            <Symbol  ID="18" SymbolType="逻辑符" DisplayName="或者" FlagName="Or"  Name="or" Sort="1"/>
+        </SymbolInfo>
+
+        <!--数据类型-->
+        <DataTypeInfo>
+            <Type Name="BigInt" SymbolDataType="Number" AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="Binary" SymbolDataType="Number"   AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="Bit"  SymbolDataType="Number"  AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="Decimal"  SymbolDataType="Number"  AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="Float"  SymbolDataType="Number"  AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="Int"   SymbolDataType="Number" AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="Money"  SymbolDataType="Number"  AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="Real"  SymbolDataType="Number"  AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="SmallInt"  SymbolDataType="Number"  AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="SmallMoney"  SymbolDataType="Number"  AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="TinyInt"  SymbolDataType="Number"  AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="VarBinary"  SymbolDataType="Number"  AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+
+            <Type Name="Char" SymbolDataType="String" AllowCompareSymbol="等于,不等于,包含,不包含,以某某开始,不以某某开始,以某某结束,不以某某结束,为空,不为空"></Type>
+            <Type Name="NChar"  SymbolDataType="String"  AllowCompareSymbol="等于,不等于,包含,不包含,以某某开始,不以某某开始,以某某结束,不以某某结束,为空,不为空"></Type>
+            <Type Name="NVarChar"  SymbolDataType="String"  AllowCompareSymbol="等于,不等于,包含,不包含,以某某开始,不以某某开始,以某某结束,不以某某结束,为空,不为空"></Type>
+            <Type Name="UniqueIdentifier"  SymbolDataType="String"  AllowCompareSymbol="等于,不等于,包含,不包含,以某某开始,不以某某开始,以某某结束,不以某某结束,为空,不为空"></Type>
+
+            <Type Name="NText"  SymbolDataType="TextString"  AllowCompareSymbol="包含,不包含,以某某开始,不以某某开始,以某某结束,不以某某结束,为空,不为空"></Type>
+            <Type Name="Text"  SymbolDataType="TextString"  AllowCompareSymbol="包含,不包含,以某某开始,不以某某开始,以某某结束,不以某某结束,为空,不为空"></Type>
+            
+            <Type Name="DateTime" SymbolDataType="DateTime"   AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="SmallDateTime" SymbolDataType="DateTime"    AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="Timestamp"  SymbolDataType="DateTime"   AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="VarChar"  SymbolDataType="String"  AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="Date"  SymbolDataType="DateTime"   AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="Time"  SymbolDataType="DateTime"   AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="DateTime2"  SymbolDataType="DateTime"   AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+            <Type Name="DateTimeOffset"  SymbolDataType="DateTime"   AllowCompareSymbol="等于,大于,小于,大于等于,小于等于,不等于,为空,不为空"></Type>
+        </DataTypeInfo>
+    </SQLType>
+
+    <SQLType Name="MySQL">
+        
+    </SQLType>
+</Root>
+
+
+
+
+

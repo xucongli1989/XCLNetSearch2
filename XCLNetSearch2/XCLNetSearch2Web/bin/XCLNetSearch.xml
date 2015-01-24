@@ -1,0 +1,474 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XCLNetSearch</name>
+    </assembly>
+    <members>
+        <member name="T:XCLNetSearch.CommonHelper">
+            <summary>
+            公共方法类
+            </summary>
+        </member>
+        <member name="M:XCLNetSearch.CommonHelper.Escape(System.String)">
+            <summary>
+            Escape
+            </summary>
+        </member>
+        <member name="M:XCLNetSearch.CommonHelper.Unescape(System.String)">
+            <summary>
+            Unescape
+            </summary>
+        </member>
+        <member name="M:XCLNetSearch.CommonHelper.GenerateStringId">
+            <summary>
+            根据guid生成字符串(16位)
+            例如：aded0a2611f8aa4a
+            </summary>
+        </member>
+        <member name="M:XCLNetSearch.CommonHelper.ConvertValueBySqlDbType(System.Data.SqlDbType,System.String)">
+            <summary>
+            将sql数据类型的string值转为c#的类型
+            </summary>
+        </member>
+        <member name="M:XCLNetSearch.CommonHelper.GetOptionsBySymbolList(System.Collections.Generic.List{XCLNetSearch.Model.SymbolModel})">
+            <summary>
+            将符号信息转为option
+            </summary>
+        </member>
+        <member name="M:XCLNetSearch.CommonHelper.GetSqlDataType(XCLNetSearch.EnumTypes.DataBaseType,System.String)">
+            <summary>
+            根据数据库和数据库数据类型，返回用于SQLParams的类型
+            </summary>
+            <param name="db">数据库</param>
+            <param name="typeName">数据类型名，如“BigInt、Varchar”</param>
+        </member>
+        <member name="M:XCLNetSearch.CommonHelper.GetQueryItemModelListByUrl(System.String,System.Collections.Generic.List{XCLNetSearch.Model.QueryFieldModel})">
+            <summary>
+            根据查询的URL值，返回查询ModelList
+            </summary>
+            <param name="queryUrl">查询的URL值</param>
+        </member>
+        <member name="M:XCLNetSearch.CommonHelper.GetUrlParamJsonValueByQueryItemModelList(System.Collections.Generic.List{XCLNetSearch.Model.QueryItemModel})">
+            <summary>
+            返回查询URL参数值的ModelList形式的json形式
+            </summary>
+        </member>
+        <member name="M:XCLNetSearch.CommonHelper.GetSQLWhereByQueryItemModelList(System.Collections.Generic.List{XCLNetSearch.Model.QueryItemModel},XCLNetSearch.Model.SearchModel)">
+            <summary>
+            生成SQL语句,结果存至searchModel中
+            </summary>
+        </member>
+        <member name="M:XCLNetSearch.CommonHelper.GetCenterString(System.String,System.String,System.String)">
+            <summary>
+            正则查找开始字符串与结束字符串的中间字符串
+            </summary>
+        </member>
+        <member name="M:XCLNetSearch.CommonHelper.No_SqlHack(System.String)">
+            <summary>
+            防止SQL注入
+            </summary>
+        </member>
+        <member name="M:XCLNetSearch.EnumObj.IsExistEnumValue(System.Int32,System.Type)">
+            <summary>
+            判断数字是否属于该枚举
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.EnumObj.Text">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.EnumObj.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="T:XCLNetSearch.EnumTypes">
+            <summary>
+            枚举类
+            </summary>
+        </member>
+        <member name="T:XCLNetSearch.EnumTypes.SymbolType">
+            <summary>
+            符号类型
+            </summary>
+        </member>
+        <member name="T:XCLNetSearch.EnumTypes.SymbolDataType">
+            <summary>
+            符号对应的数据类型（仅限比较符）
+            </summary>
+        </member>
+        <member name="F:XCLNetSearch.EnumTypes.SymbolDataType.Number">
+            <summary>
+            数字型
+            </summary>
+        </member>
+        <member name="F:XCLNetSearch.EnumTypes.SymbolDataType.String">
+            <summary>
+            字符串型
+            </summary>
+        </member>
+        <member name="F:XCLNetSearch.EnumTypes.SymbolDataType.TextString">
+            <summary>
+            Text形式的字符串型，ntext/text，查询时只能使用[not] like、is [not] null
+            </summary>
+        </member>
+        <member name="F:XCLNetSearch.EnumTypes.SymbolDataType.DateTime">
+            <summary>
+            日期时间型
+            </summary>
+        </member>
+        <member name="T:XCLNetSearch.EnumTypes.InputControlTypeEnum">
+            <summary>
+            输入区域控件类型
+            </summary>
+        </member>
+        <member name="F:XCLNetSearch.EnumTypes.InputControlTypeEnum.TextBox">
+            <summary>
+            文本框
+            </summary>
+        </member>
+        <member name="F:XCLNetSearch.EnumTypes.InputControlTypeEnum.Select">
+            <summary>
+            下拉选择框
+            </summary>
+        </member>
+        <member name="T:XCLNetSearch.EnumTypes.FormMethodEnum">
+            <summary>
+            提交表单的方式
+            </summary>
+        </member>
+        <member name="F:XCLNetSearch.EnumTypes.FormMethodEnum.get">
+            <summary>
+            Get
+            </summary>
+        </member>
+        <member name="F:XCLNetSearch.EnumTypes.FormMethodEnum.post">
+            <summary>
+            Post
+            </summary>
+        </member>
+        <member name="T:XCLNetSearch.EnumTypes.DataBaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="F:XCLNetSearch.EnumTypes.DataBaseType.MSSQL">
+            <summary>
+            sql server
+            </summary>
+        </member>
+        <member name="T:XCLNetSearch.Model.DataTypeInfoModel">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.DataTypeInfoModel.DataBase">
+            <summary>
+            所属数据库
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.DataTypeInfoModel.Name">
+            <summary>
+            类型名
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.DataTypeInfoModel.SqlType">
+            <summary>
+            数据库中的类型
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.DataTypeInfoModel.SymbolDataType">
+            <summary>
+            分类，如“字符串，数字”
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.DataTypeInfoModel.AllowCompareSymbol">
+            <summary>
+            允许的比较符号
+            </summary>
+        </member>
+        <member name="T:XCLNetSearch.Model.SymbolModel">
+            <summary>
+            条件符号model
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.SymbolModel.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.SymbolModel.SymbolType">
+            <summary>
+            符号类型
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.SymbolModel.DisplayName">
+            <summary>
+            前台显示名
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.SymbolModel.FlagName">
+            <summary>
+            标志名，唯一
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.SymbolModel.Name">
+            <summary>
+            实际名称，如like、(、=、or
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.SymbolModel.Sort">
+            <summary>
+            排序号
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.SymbolModel.IsNeedValue">
+            <summary>
+            是否需要有输入值(如 is null的时候就不需要输入值)
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.SymbolModel.ValueFormat">
+            <summary>
+            值的格式，如："{0}%",其中{0}表示在输入值的后面都加一个%
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.SymbolModel.IsNullOrNotNull">
+            <summary>
+            是否为null或not null
+            </summary>
+        </member>
+        <member name="T:XCLNetSearch.Model.QueryFieldModel">
+            <summary>
+            要查询的字段实体（用于初始化查询控件,由用户初始化时填写）
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryFieldModel.FieldName">
+            <summary>
+            数据库中对应的字段名
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryFieldModel.FieldNameFormat">
+            <summary>
+            字段名的格式字符串，用于生成的SQL中对该字段进行处理
+            如："cast({0} as int)"，其中{0}表示该字段，也就是FieldName
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryFieldModel.FieldValueFormat">
+            <summary>
+            查询输入值的格式，与QueryFieldModel中的FieldNameFormat配合使用
+            如:输入的值为"2013-11",想转为日期的形式，那该属性值就是："{0}-01"，也可以对其使用SQL函数等
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryFieldModel.FieldDisplayName">
+            <summary>
+            在界面上显示的字段名
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryFieldModel.FieldSymbolDataType">
+            <summary>
+            查询的字段项的数据类型，主要是用于生成后面的比较符号，不同的类型有不同的符号
+            注意：这里的类型应该是经过格式化处理后的类型，比如:year(FieldName),那这个类型应该是Number型
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryFieldModel.InputValueDataType">
+            <summary>
+            输入值（也就是SQL中的查询参数）的类型，主要是用于生成SQL中的SqlParameter
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryFieldModel.InputValueDataSize">
+            <summary>
+            输入值（也就是SQL中的查询参数）的Size，主要是用于生成SQL中的SqlParameter
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryFieldModel.FieldDateFormat">
+            <summary>
+            时间日期格式，如：yyyy-MM-dd
+            注：只要此值不为空，则自动调用JS日期选择控件
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryFieldModel.InputControlType">
+            <summary>
+            输入区域的控件类型
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryFieldModel.CustomInputControlAttributes">
+            <summary>
+            输入区域控件的自定义属性，如："rel='???' abc='???'"
+            切勿重复定义本控件所使用的属性
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryFieldModel.InputControlInitValue">
+            <summary>
+            输入区域的初始值，如当输入区域的控件为select时，该初始值可以是里面的options
+            </summary>
+        </member>
+        <member name="T:XCLNetSearch.Model.QueryItemModel">
+            <summary>
+            查询项实体（最终会根据此实体解析为SQL）
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryItemModel.LeftBracketModel">
+            <summary>
+            左括号Model
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryItemModel.FieldModel">
+            <summary>
+            字段Model
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryItemModel.CompareModel">
+            <summary>
+            比较符号Model
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryItemModel.FieldValue">
+            <summary>
+            查询输入的值（不带符号的格式，也就是输入的值）
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryItemModel.FieldValueWithFormat">
+            <summary>
+            查询输入的值（带符号的格式）
+            如：若符号的数据格式为"{0}%"，则此值就是"查询输入的值%"
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryItemModel.RightBracketModel">
+            <summary>
+            右括号Model
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.QueryItemModel.LogicModel">
+            <summary>
+            逻辑符号Model
+            </summary>
+        </member>
+        <member name="T:XCLNetSearch.Model.SearchModel">
+            <summary>
+            查询条件实体
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.SearchModel.OldWhere">
+            <summary>
+            原始条件字符串，如"a=b or a=c"
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.SearchModel.OldParameters">
+            <summary>
+            原始条件SQL参数
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.SearchModel.NewWhere">
+            <summary>
+            根据本控件的查询条件与原始条件合并后的最终查询条件，包含SqlParameter参数，如"A=@A and B=@B"
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.SearchModel.NewParameters">
+            <summary>
+            根据本控件的查询条件SQL参数与原始条件SQL参数合并后的最终查询条件SQL参数
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Model.SearchModel.SQLWhere">
+            <summary>
+            根据本控件的查询条件与原始条件合并后的最终查询条件，不包含SqlParameter参数，而是生成最原始的where字符串,如"A='a' and B=12"
+            注意：该where值中的输入的值已过滤SQL注入
+            </summary>
+        </member>
+        <member name="M:XCLNetSearch.Search.GetSymbolList(XCLNetSearch.EnumTypes.SymbolType)">
+            <summary>
+            根据符号类型返回符号信息列表list
+            </summary>
+        </member>
+        <member name="M:XCLNetSearch.Search.GetResourceURL(System.String)">
+            <summary>
+            获取嵌入的资源文件
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.IsCompressHTML">
+            <summary>
+            是否压缩输入的HTML代码
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.QueryFields">
+            <summary>
+            查询条件初始化
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.XmlConfigNode">
+            <summary>
+            配置文件
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.SymbolList">
+            <summary>
+            符号信息
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.DataTypeInfoList">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.CurrentDataBaseType">
+            <summary>
+            当前数据库类型,默认为MSSQL
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.QueryUrlParamName">
+            <summary>
+            查询条件存放的URL中的参数名，默认为where
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.QueryUrlParamValue">
+            <summary>
+            查询条件存放的URL中的参数的值
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.GetQueryItemModelList">
+            <summary>
+            根据url中查询参数的值返回查询项的ModelList
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.ContainerID">
+            <summary>
+            查询控件所在容器的ID
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.FormMethod">
+            <summary>
+            表单提交的方式，默认为get
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.IsAjaxSubmit">
+            <summary>
+            是否以AJAX方式提交表单，默认为false
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.Message">
+            <summary>
+            信息提示，用于显示在界面上
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.MaxLine">
+            <summary>
+            允许最多的条件数，也就是界面上的条件行数
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.SearchModel">
+            <summary>
+            查询条件及参数(关键，这是所有条件经本控件解析后的最终存放位置)
+            </summary>
+        </member>
+        <member name="P:XCLNetSearch.Search.GetRemark">
+            <summary>
+            说明信息
+            </summary>
+        </member>
+        <member name="T:XCLNetSearch.Templates.TemplateModel">
+            <summary>
+            模板标记实体
+            </summary>
+        </member>
+    </members>
+</doc>
